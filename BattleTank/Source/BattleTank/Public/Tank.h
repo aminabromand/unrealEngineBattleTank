@@ -2,13 +2,14 @@
 
 #pragma once
 
-#include "TankAimingComponent.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
 //The tanks barrel
 class UTankBarrel;
+class UTankAimingComponent;
 
 //The battle tank
 UCLASS()

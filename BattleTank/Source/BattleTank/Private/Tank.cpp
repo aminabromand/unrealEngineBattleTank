@@ -2,8 +2,10 @@
 
 //#include "GameFramework/Actor.h"
 #include "GameFramework/Pawn.h"
-#include "Tank.h"
+#include "TankAimingComponent.h"
 #include "TankBarrel.h"
+#include "Tank.h"
+
 
 // Sets default values
 ATank::ATank()

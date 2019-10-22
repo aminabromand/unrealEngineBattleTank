@@ -23,8 +23,6 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed) {
 	FVector OutLaunchVelocity;
 	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile"));
 
-	
-
 	if (UGameplayStatics::SuggestProjectileVelocity(
 		this,
 		OutLaunchVelocity,
@@ -58,6 +56,6 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection) {
 
 	
 
-	Barrel->Elevate(5);
+	Barrel->Elevate(DeltaRotator.Pitch);
 }
 
