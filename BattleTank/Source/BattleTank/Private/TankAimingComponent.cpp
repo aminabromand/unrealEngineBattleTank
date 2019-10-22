@@ -47,6 +47,10 @@ void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet) {
 	Barrel = BarrelToSet;
 }
 
+void UTankAimingComponent::SetTurrentReference(UTankTurrent* TurrentToSet) {
+	Turrent = TurrentToSet;
+}
+
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection) {
 	if (!Barrel) return;
 	

@@ -9,6 +9,7 @@
 
 //The tanks barrel
 class UTankBarrel;
+class UTankTurrent;
 class UTankAimingComponent;
 
 //The battle tank
@@ -23,6 +24,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category=Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetTurrentReference(UTankTurrent* TurrentToSet);
+
 	void AimAt(FVector HitLocation);
 
 	UPROPERTY(EditAnywhere, Category = Firing)

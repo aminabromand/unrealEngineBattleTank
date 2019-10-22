@@ -4,6 +4,7 @@
 #include "GameFramework/Pawn.h"
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
+#include "TankTurrent.h"
 #include "Tank.h"
 
 
@@ -36,5 +37,9 @@ void ATank::AimAt(FVector HitLocation) {
 
 void ATank::SetBarrelReference(UTankBarrel* BarrelToSet) {
 	TankAimingComponent->SetBarrelReference(BarrelToSet);
+}
+
+void ATank::SetTurrentReference(UTankTurrent* TurrentToSet) {
+	TankAimingComponent->SetTurrentReference(TurrentToSet);
 }
 

@@ -8,6 +8,7 @@
 
 //The tanks barrel
 class UTankBarrel;
+class UTankTurrent;
 
 //Helps the tank to aim
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -20,10 +21,15 @@ public:
 	UTankAimingComponent();
 
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+
+	void SetTurrentReference(UTankTurrent* TurrentToSet);
+
 	void AimAt(FVector HitLocation, float LaunchSpeed);
 
 private:
 	UTankBarrel* Barrel = nullptr;
+	UTankTurrent* Turrent = nullptr;
 	void MoveBarrelTowards(FVector AimDirection);
+
 		
 };
