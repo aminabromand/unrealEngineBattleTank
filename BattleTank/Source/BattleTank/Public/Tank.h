@@ -28,6 +28,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurrentReference(UTankTurrent* TurrentToSet);
 
+	UFUNCTION(BlueprintCallable, Category = Combat)
+	void Fire();
+
 	void AimAt(FVector HitLocation);
 
 	UPROPERTY(EditAnywhere, Category = Firing)

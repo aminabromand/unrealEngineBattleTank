@@ -1,9 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "TankAIController.h"
 #include "Engine/World.h"
 #include "Tank.h"
 #include "TankPlayerController.h"
-#include "TankAIController.h"
+
 
 
 ATank* ATankAIController::GetControlledTank() const {
@@ -45,7 +46,7 @@ void ATankAIController::Tick(float DeltaSeconds) {
 	if (GetPlayerTank()) {
 		//Move towards player
 		//Aim towards player
-		//GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
+		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
 
 		//Fire if ready
 		
