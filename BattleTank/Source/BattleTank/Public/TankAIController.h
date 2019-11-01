@@ -22,6 +22,4 @@ public:
 private:
 	virtual ATank * GetControlledTank() const;
 	virtual ATank* GetPlayerTank() const;
-	
-	
 };
