@@ -22,7 +22,11 @@ ATank* ATankAIController::GetPlayerTank() const {
 
 void ATankAIController::Tick(float DeltaSeconds) {
 	Super::Tick(DeltaSeconds);
-	if (GetPlayerTank()) {
+	auto PlayerTank = GetPlayerTank();
+	if (PlayerTank) {
+
+		MoveToActor(PlayerTank, AcceptanceRadius);
+
 		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
 		GetControlledTank()->Fire();
 	}
