@@ -1,16 +1,13 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Copyright AbromandIT
 
 #include "TankMovementComponent.h"
 #include "TankTrack.h"
 #include "Engine/World.h"
 
-
 void UTankMovementComponent::Initialize(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet) {
 	if (LeftTrackToSet) LeftTrack = LeftTrackToSet;
 	if (RightTrackToSet) RightTrack = RightTrackToSet;
 }
-
 
 void UTankMovementComponent::IntendMoveForward(float Throw) {
 	if (LeftTrack) LeftTrack->SetThrottle(Throw);

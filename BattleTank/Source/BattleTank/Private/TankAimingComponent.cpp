@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright AbromandIT
 
 #include "TankAimingComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -42,14 +42,6 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed) {
 	}
 } 
 
-void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet) {
-	Barrel = BarrelToSet;
-}
-
-void UTankAimingComponent::SetTurrentReference(UTankTurrent* TurrentToSet) {
-	Turrent = TurrentToSet;
-}
-
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection) {
 	if (!Barrel) return;
 	
@@ -59,5 +51,10 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection) {
 	
 	Barrel->Elevate(DeltaRotator.Pitch);
 	Turrent->Rotate(DeltaRotator.Yaw);
+}
+
+void UTankAimingComponent::Initialize(UTankBarrel* BarrelToSet, UTankTurrent* TurrentToSet) {
+	if (BarrelToSet) Barrel = BarrelToSet;
+	if (TurrentToSet) Turrent = TurrentToSet;
 }
 
