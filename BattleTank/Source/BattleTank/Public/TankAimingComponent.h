@@ -33,7 +33,7 @@ public:
 
 protected:
 	UPROPERTY(BluePrintReadOnly, Category = "State")
-	EFiringState FiringState = EFiringState::Reloading;
+	EFiringState FiringState = EFiringState::Locked;
 
 private:
 	UTankBarrel* Barrel = nullptr;

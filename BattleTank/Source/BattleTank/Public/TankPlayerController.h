@@ -7,6 +7,7 @@
 #include "TankPlayerController.generated.h"
 
 class ATank;
+class UTankAimingComponent;
 
 /**
  * 
@@ -19,6 +20,8 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 protected:
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 	virtual ATank * GetControlledTank() const;
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+	void FoundAimingComponent(UTankAimingComponent * AimCompRef);
 public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

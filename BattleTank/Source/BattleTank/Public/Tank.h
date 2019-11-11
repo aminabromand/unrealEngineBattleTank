@@ -29,11 +29,14 @@ public:
 		void Fire();
 
 protected:
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
 	UTankAimingComponent * TankAimingComponent = nullptr;
 
 	UPROPERTY(BlueprintReadOnly)
 	UTankMovementComponent* TankMovementComponent = nullptr;
+
+	UPROPERTY(BlueprintReadWrite)
+	UTankBarrel* Barrel = nullptr;
 
 private:
 	// Called when the game starts or when spawned
@@ -45,7 +48,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
-	UTankBarrel* Barrel = nullptr;
+	
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3;
