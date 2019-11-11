@@ -8,7 +8,6 @@
 #include "TankTurrent.h"
 #include "Engine/StaticMeshSocket.h"
 #include "Projectile.h"
-#include "TankMovementComponent.h"
 
 
 // Sets default values

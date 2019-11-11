@@ -11,7 +11,6 @@ class UTankBarrel;
 class UTankTurrent;
 class UTankAimingComponent;
 class AProjectile;
-class UTankMovementComponent;
 
 //The battle tank
 UCLASS()
@@ -31,9 +30,6 @@ public:
 protected:
 	UPROPERTY(BlueprintReadWrite)
 	UTankAimingComponent * TankAimingComponent = nullptr;
-
-	UPROPERTY(BlueprintReadOnly)
-	UTankMovementComponent* TankMovementComponent = nullptr;
 
 	UPROPERTY(BlueprintReadWrite)
 	UTankBarrel* Barrel = nullptr;

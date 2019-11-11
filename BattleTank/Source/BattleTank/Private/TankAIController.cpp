@@ -4,6 +4,8 @@
 #include "Engine/World.h"
 #include "Tank.h"
 #include "TankPlayerController.h"
+//Depends on TankMovementComponent via Pathfinding
+
 
 ATank* ATankAIController::GetControlledTank() const {
 	return Cast<ATank>(GetPawn());
