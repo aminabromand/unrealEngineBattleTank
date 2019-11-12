@@ -25,7 +25,7 @@ public:
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = Combat)
-		void Fire();
+	void Fire();
 
 protected:
 	UPROPERTY(BlueprintReadWrite)
@@ -43,8 +43,6 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
-
-	
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3;

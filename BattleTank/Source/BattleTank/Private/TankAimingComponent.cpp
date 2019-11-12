@@ -20,7 +20,7 @@ UTankAimingComponent::UTankAimingComponent()
 }
 
 
-void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed) {
+void UTankAimingComponent::AimAt(FVector HitLocation) {
 	if (!Barrel) return;
 	
 	FVector OutLaunchVelocity;
@@ -43,7 +43,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed) {
 } 
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection) {
-	if (!Barrel) return;
+	if (!Barrel || !Turrent) return;
 	
 	auto BarrelRotator = Barrel->GetForwardVector().GetSafeNormal().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
