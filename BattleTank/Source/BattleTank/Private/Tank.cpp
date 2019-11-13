@@ -34,8 +34,6 @@ void ATank::Fire() {
 
 	if (!ensure(Barrel && ProjectileBlueprint)) return;
 
-	UE_LOG(LogTemp, Warning, TEXT("Fire!"));
-
 	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
 	if (!isReloaded) return;
 
