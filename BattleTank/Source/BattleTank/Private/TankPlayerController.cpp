@@ -4,11 +4,11 @@
 #include "TankPlayerController.h"
 #include "Tank.h"
 #include "Engine/World.h"
-//#include "TankAimingComponent.h"
+#include "TankAimingComponent.h"
 
 
-ATank* ATankPlayerController::GetControlledTank() const {
-	return Cast<ATank>(GetPawn());
+UTankAimingComponent* ATankPlayerController::GetAimingComponent() const {
+	return Cast<ATank>(GetPawn())->TankAimingComponent;
 }
 
 void ATankPlayerController::BeginPlay() {
@@ -21,11 +21,11 @@ void ATankPlayerController::Tick(float DeltaTime) {
 }
 
 void ATankPlayerController::AimTowardsCrosshair() {
-	if (!GetControlledTank()) return;
+	if (!GetAimingComponent()) return;
 
 	FVector HitLocation; // Out parameter
 	if (GetSightRayHitLocation(HitLocation)) {
-		GetControlledTank()->AimAt(HitLocation);
+		GetAimingComponent()->AimAt(HitLocation);
 	}
 } 
 

@@ -7,7 +7,7 @@
 #include "TankBarrel.h"
 #include "TankTurrent.h"
 #include "Engine/StaticMeshSocket.h"
-#include "Projectile.h"
+
 
 
 // Sets default values
@@ -25,26 +25,5 @@ void ATank::BeginPlay(){
 	//UE_LOG(LogTemp, Warning, TEXT("12345 - Tank_Cpp: %s BeginPlay"), *TankName);
 }
 
-void ATank::AimAt(FVector HitLocation) {
-	if (!ensure(TankAimingComponent)) return;
-	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
-} 
 
-void ATank::Fire() {
-
-	if (!ensure(Barrel && ProjectileBlueprint)) return;
-
-	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
-	if (!isReloaded) return;
-
-	
-
-	LastFireTime = FPlatformTime::Seconds();
-
-	auto SocketLocation = Barrel->GetSocketLocation(FName("Projectile"));
-	auto SocketRotation = Barrel->GetSocketRotation(FName("Projectile"));
-
-	auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, SocketLocation, SocketRotation);
-	Projectile->LaunchProjectile(LaunchSpeed);
-}
 
